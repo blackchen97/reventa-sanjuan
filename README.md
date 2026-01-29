@@ -1,37 +1,41 @@
-# Reventa San Juan
+# 🛒 Reventa San Juan
 
 Plataforma de compra y venta de productos de segunda mano.
 
 ## 🚀 Características
 
 ### Backend
-- Node.js con Express y TypeScript
-- Autenticación JWT
-- CRUD de productos
-- Arquitectura modular
+- ✅ Node.js + Express + TypeScript
+- ✅ API REST con autenticación JWT
+- ✅ CRUD completo de productos
+- ✅ Arquitectura modular y escalable
+- ✅ Variables de entorno configurables
 
 ### Frontend
-- Next.js 14 con App Router
-- TypeScript
-- Tailwind CSS
-- Responsive design
+- ✅ Vite + React 18 + TypeScript
+- ✅ Tailwind CSS para estilos
+- ✅ React Router para navegación SPA
+- ✅ Componentes reutilizables
+- ✅ Diseño completamente responsive
+- ✅ Interceptores de axios para autenticación
 
 ## 📁 Estructura del Proyecto
 
 ```
 
 reventa-sanjuan/
-├── backend/           # API REST
+├── backend/           # API REST (puerto 3000)
 │   ├── src/
-│   │   ├── modules/  # Módulos (auth, products)
+│   │   ├── modules/  # Módulos de negocio
 │   │   ├── routes/   # Rutas de la API
 │   │   └── config/   # Configuraciones
-│   └── package.json
-├── frontend/         # Aplicación web
-│   ├── app/         # Next.js App Router
-│   ├── components/  # Componentes reutilizables
-│   └── services/    # Servicios API
-└── README.md
+├── frontend/         # Aplicación web (puerto 3001)
+│   ├── src/
+│   │   ├── components/ # Componentes UI
+│   │   ├── pages/     # Páginas de la app
+│   │   ├── services/  # Servicios API
+│   │   └── types/     # Tipos TypeScript
+└── README.md         # Esta documentación
 
 ```
 
@@ -52,37 +56,47 @@ npm install
 npm run dev
 ```
 
-🔧 Variables de Entorno
+🌐 URLs
 
-Backend (.env)
+· Frontend: http://localhost:3001
+· Backend API: http://localhost:3000
+· Health Check: http://localhost:3000/health
 
-```
-PORT=3000
-JWT_SECRET=tu_super_secreto_jwt
-NODE_ENV=development
-```
+🔧 Endpoints API
 
-📦 Scripts
+Autenticación
+
+· POST /api/auth/register - Registrar usuario
+· POST /api/auth/login - Iniciar sesión
+· GET /api/auth/profile - Perfil de usuario
+
+Productos
+
+· GET /api/products - Listar productos
+· GET /api/products/:id - Obtener producto
+· POST /api/products - Crear producto
+· PUT /api/products/:id - Actualizar producto
+· DELETE /api/products/:id - Eliminar producto
+
+📦 Tecnologías Utilizadas
 
 Backend
 
-· npm run dev: Inicia servidor en modo desarrollo
-· npm run build: Compila TypeScript
-· npm start: Inicia servidor en producción
+· Node.js
+· Express
+· TypeScript
+· bcryptjs (hashing)
+· JSON Web Tokens
 
 Frontend
 
-· npm run dev: Inicia servidor en modo desarrollo
-· npm run build: Construye para producción
-· npm start: Inicia servidor en producción
+· Vite
+· React 18
+· TypeScript
+· Tailwind CSS
+· React Router
+· Axios
 
-🌐 Endpoints API
+📄 Licencia
 
-· GET /api/products - Obtener todos los productos
-· POST /api/products - Crear nuevo producto
-· POST /api/auth/register - Registrar usuario
-· POST /api/auth/login - Iniciar sesión
-
-📝 Licencia
-
-Este proyecto está bajo la licencia MIT.
+MIT
